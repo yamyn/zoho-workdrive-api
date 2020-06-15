@@ -1,0 +1,31 @@
+{
+    "name": "zoho-workdrive-api",
+    "version": "0.1.0",
+    "description": "ZohoWorkDrive module, which makes communication with ZohoWorkDrive API easier",
+    "main": "./lib/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yamyn/zoho-workdrive-api.git"
+    },
+    "keywords": [
+        "zoho",
+        "workdrive",
+        "api",
+        "rest"
+    ],
+    "author": "Yaroslav Mynchenko",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/yamyn/zoho-workdrive-api/issues"
+    },
+    "homepage": "https://github.com/yamyn/zoho-workdrive-api#readme",
+    "dependencies": {
+        "axios": "^0.19.2",
+        "dotenv": "^8.2.0",
+        "form-data": "^3.0.0",
+        "moment": "^2.26.0"
+    }
+}
