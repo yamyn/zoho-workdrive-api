@@ -14,53 +14,53 @@ npm i zoho-workdrive-api
 
 ### Methods
 
-#### [team](###team)
+#### [team](#team-1)
 
--   [all](####team.all)
--   [info](####team.info)
--   [currentUser](####team.currentUser)
+-   [all](#teamall)
+-   [info](#teaminfo)
+-   [currentUser](#teamcurrentuser)
 
-#### [ws](###workspace) (Workspace)
+#### [ws](#workspase) (Workspace)
 
--   [all](####ws.all)
--   [info](#w###s.info)
--   [create](####ws.create)
--   [rename](####ws.rename)
--   [delete](####ws.delete)
+-   [all](#wsall)
+-   [info](#wsinfo)
+-   [create](#wscreate)
+-   [rename](#wsrename)
+-   [delete](#wsdelete)
 
-##### [users](####ws.users) (Users of workspace)
+##### [users](#wsusers) (Users of workspace)
 
--   [all](####ws.users.all)
--   [add](####ws.users.add)
--   [newRole](####ws.users.newRole)
--   [delete](####ws.users.delete)
+-   [all](#wsusersall)
+-   [add](#wsusersadd)
+-   [newRole](#wsusersnewrole)
+-   [delete](#wsusersdelete)
 
-#### [ps](###privatespace) (Privatespace)
+#### [ps](#privatespace) (Privatespace)
 
--   [all](####ps.all)
--   [files](####ps.files)
+-   [all](#psinfo)
+-   [files](#psfiles)
 
-#### [folder](###folder)
+#### [folder](#folder-1)
 
--   [info](####folder.info)
--   [create](####folder.create)
--   [rename](####folder.ename)
--   [copy](####folder.copy)
--   [delete](####folder.delete)
+-   [info](#folderinfo)
+-   [create](#foldercreate)
+-   [rename](#folderrename)
+-   [copy](#foldercopy)
+-   [delete](#folderdelete)
 
-#### [files](###files)
+#### [files](#files-1)
 
--   [info](####files.info)
--   [create](####files.create)
--   [upload](####files.upload)
--   [download](####files.download)
--   [rename](####files.rename)
--   [copy](####files.copy)
--   [delete](####files.delete)
--   [move](####files.move)
--   [list](####files.list)
+-   [info](#filesinfo)
+-   [create](#filescreate)
+-   [upload](#filesupload)
+-   [download](#filesdownload)
+-   [rename](#filesrename)
+-   [copy](#filescopy)
+-   [delete](#filesdelete)
+-   [move](#filesmove)
+-   [list](#fileslist)
 
-#### [url](###url)
+#### [url](#url-1)
 
 #### share will be added soon
 
