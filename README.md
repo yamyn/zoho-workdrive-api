@@ -12,93 +12,97 @@ npm i zoho-workdrive-api
 
 # API
 
-### Methods
+## Methods
 
-#### [team](#team-1)
+1. [team](#team-1)
 
--   [all](#teamall)
--   [info](#teaminfo)
--   [currentUser](#teamcurrentuser)
+    - [all](#teamall)
+    - [info](#teaminfo)
+    - [currentUser](#teamcurrentuser)
 
-#### [ws](#workspase) (Workspace)
+2. [ws](#workspase) (Workspace)
 
--   [all](#wsall)
--   [info](#wsinfo)
--   [create](#wscreate)
--   [rename](#wsrename)
--   [delete](#wsdelete)
+    - [all](#wsall)
+    - [info](#wsinfo)
+    - [create](#wscreate)
+    - [rename](#wsrename)
+    - [delete](#wsdelete)
 
-##### [users](#wsusers) (Users of workspace)
+3. [users](#wsusers) (Users of workspace)
 
--   [all](#wsusersall)
--   [add](#wsusersadd)
--   [newRole](#wsusersnewrole)
--   [delete](#wsusersdelete)
+    - [all](#wsusersall)
+    - [add](#wsusersadd)
+    - [newRole](#wsusersnewrole)
+    - [delete](#wsusersdelete)
 
-#### [ps](#privatespace) (Privatespace)
+4. [ps](#privatespace) (Privatespace)
 
--   [all](#psinfo)
--   [files](#psfiles)
+    - [all](#psinfo)
+    - [files](#psfiles)
 
-#### [folder](#folder-1)
+5. [folder](#folder-1)
 
--   [info](#folderinfo)
--   [create](#foldercreate)
--   [rename](#folderrename)
--   [copy](#foldercopy)
--   [delete](#folderdelete)
+    - [info](#folderinfo)
+    - [create](#foldercreate)
+    - [rename](#folderrename)
+    - [copy](#foldercopy)
+    - [delete](#folderdelete)
 
-#### [files](#files-1)
+6. [files](#files-1)
 
--   [info](#filesinfo)
--   [create](#filescreate)
--   [upload](#filesupload)
--   [download](#filesdownload)
--   [rename](#filesrename)
--   [copy](#filescopy)
--   [delete](#filesdelete)
--   [move](#filesmove)
--   [list](#fileslist)
+    - [info](#filesinfo)
+    - [create](#filescreate)
+    - [upload](#filesupload)
+    - [download](#filesdownload)
+    - [rename](#filesrename)
+    - [copy](#filescopy)
+    - [delete](#filesdelete)
+    - [move](#filesmove)
+    - [list](#fileslist)
 
-#### [url](#url-1)
+7. [url](#url-1)
 
-#### share will be added soon
+8. share will be added soon
 
 # Examples
 
-### Require module
+## Require module
 
 ```javascript
 const ZWorkDriveApi = require('zoho-workdrive-api');
 const zWDApi = new ZWorkDriveApi(token, domain);
 ```
 
-| Param              | Type                | Default          | Description                 | Required |
-| ------------------ | ------------------- | ---------------- | --------------------------- | -------- |
-| params             | <code>Object</code> |                  |                             |          |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain             | false    |
+| Param              | Type                | Description                 | Required |
+| ------------------ | ------------------- | --------------------------- | -------- |
+| params             | <code>Object</code> |                             |          |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token | false    |
+| params.domain      | <code>String</code> | Zoho api domain             | false    |
 
+<br>
+<br>
 The parameters when creating an instance of the ZWorkDriveApi class are optional and will be used by default when you do
 not transfer a token and domain when working with api.
 
 The following api methods do not require a domain and token if you passed them when creating an instance. But this
 structure allows you to make requests with other tokens and domains without creating a new instance of API
 
-### team
+## team
 
 #### team.all
 
-Return all user`s teams info
+_Return all user`s teams info_
 
 **Returns**: <code>Object[]</code> - User`s teams array of objects
 
-| Param              | Type                | Default          | Description                   | Required |
-| ------------------ | ------------------- | ---------------- | ----------------------------- | -------- |
-| params             | <code>Object</code> |                  |                               |          |
-| params.zuid        | <code>String</code> |                  | Zoho user`s account id | true |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token   | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain               | false    |
+| Param              | Type                | Description                   | Required |
+| ------------------ | ------------------- | ----------------------------- | -------- |
+| params             | <code>Object</code> |                               |          |
+| params.zuid        | <code>String</code> | Zoho user`s account id | true |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token   | false    |
+| params.domain      | <code>String</code> | Zoho api domain               | false    |
+
+<br>
 
 ```javascript
 zWDApi.team
@@ -126,18 +130,20 @@ zWDApi.team
 //This is typical for the following examples too
 ```
 
-#### team.info
+### team.info
 
-Return user`s team by id
+_Return user`s team by id_
 
 **Returns**: <code>Object</code> - User`s team object
 
-| Param              | Type                | Default          | Description                 | Required |
-| ------------------ | ------------------- | ---------------- | --------------------------- | -------- |
-| params             | <code>Object</code> |                  |                             |          |
-| params.teamId      | <code>String</code> |                  | Id of the desired team      | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain             | false    |
+| Param              | Type                | Description                 | Required |
+| ------------------ | ------------------- | --------------------------- | -------- |
+| params             | <code>Object</code> |                             |          |
+| params.teamId      | <code>String</code> | Id of the desired team      | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token | false    |
+| params.domain      | <code>String</code> | Zoho api domain             | false    |
+
+<br>
 
 ```javascript
 zWDApi.team
@@ -152,18 +158,18 @@ zWDApi.team
     });
 ```
 
-#### team.currentUser
+### team.currentUser
 
-Return current user for team
+_Return current user for team_
 
 **Returns**: <code>Object</code> - current user object
 
-| Param              | Type                | Default          | Description                          | Required |
-| ------------------ | ------------------- | ---------------- | ------------------------------------ | -------- |
-| params             | <code>Object</code> |                  |                                      |          |
-| params.teamId      | <code>String</code> |                  | Id of the desired team`s user | true |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token          | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain                      | false    |
+| Param              | Type                | Description                          | Required |
+| ------------------ | ------------------- | ------------------------------------ | -------- |
+| params             | <code>Object</code> |                                      |          |
+| params.teamId      | <code>String</code> | Id of the desired team`s user | true |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token          | false    |
+| params.domain      | <code>String</code> | Zoho api domain                      | false    |
 
 ```javascript
 zWDApi.team
@@ -178,20 +184,22 @@ zWDApi.team
     });
 ```
 
-### workspase
+## workspase
 
-#### ws.all
+### ws.all
 
-Return current team`s workspases
+_Return current team`s workspases_
 
 **Returns**: <code>Object[]</code> - current team`s workspases array of objects
 
-| Param              | Type                | Default          | Description                        | Required |
-| ------------------ | ------------------- | ---------------- | ---------------------------------- | -------- |
-| params             | <code>Object</code> |                  |                                    |          |
-| params.teamId      | <code>String</code> |                  | Id of the desired team`s ws | true |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token        | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain                    | false    |
+| Param              | Type                | Description                        | Required |
+| ------------------ | ------------------- | ---------------------------------- | -------- |
+| params             | <code>Object</code> |                                    |          |
+| params.teamId      | <code>String</code> | Id of the desired team`s ws | true |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token        | false    |
+| params.domain      | <code>String</code> | Zoho api domain                    | false    |
+
+<br>
 
 ```javascript
 zWDApi.ws
@@ -206,19 +214,21 @@ zWDApi.ws
     });
 ```
 
-#### ws.info
+### ws.info
 
-Return current workspase by id
+_Return current workspase by id_
 
 **Returns**: <code>Object</code> - current workspase object
 
-| Param              | Type                | Default          | Description                        | Required |
-| ------------------ | ------------------- | ---------------- | ---------------------------------- | -------- |
-| params             | <code>Object</code> |                  |                                    |          |
-| params.teamId      | <code>String</code> |                  | Id of the desired team`s ws | true |
-| params.wsId        | <code>String</code> |                  | Id of the desired ws               | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token        | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain                    | false    |
+| Param              | Type                | Description                        | Required |
+| ------------------ | ------------------- | ---------------------------------- | -------- |
+| params             | <code>Object</code> |                                    |          |
+| params.teamId      | <code>String</code> | Id of the desired team`s ws | true |
+| params.wsId        | <code>String</code> | Id of the desired ws               | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token        | false    |
+| params.domain      | <code>String</code> | Zoho api domain                    | false    |
+
+<br>
 
 ```javascript
 zWDApi.ws
@@ -234,21 +244,23 @@ zWDApi.ws
     });
 ```
 
-#### ws.create
+### ws.create
 
-Create new workspace
+_Create new workspace_
 
 **Returns**: <code>Object</code> - new workspase object
 
-| Param               | Type                 | Default          | Description                        | Required |
-| ------------------- | -------------------- | ---------------- | ---------------------------------- | -------- |
-| params              | <code>Object</code>  |                  |                                    |          |
-| params.teamId       | <code>String</code>  |                  | Id of the desired team`s ws | true |
-| params.name         | <code>String</code>  |                  | Name your new workspace            | true     |
-| params.isPublicTeam | <code>Boolean</code> |                  | Is public within team              | false    |
-| params.description  | <code>String</code>  |                  | description for your new workspace | false    |
-| params.accessToken  | <code>String</code>  |                  | Zoho WorkDrive access token        | false    |
-| params.domain       | <code>String</code>  | <code>com</code> | Zoho api domain                    | false    |
+| Param               | Type                 | Description                        | Required |
+| ------------------- | -------------------- | ---------------------------------- | -------- |
+| params              | <code>Object</code>  |                                    |          |
+| params.teamId       | <code>String</code>  | Id of the desired team`s ws | true |
+| params.name         | <code>String</code>  | Name your new workspace            | true     |
+| params.isPublicTeam | <code>Boolean</code> | Is public within team              | false    |
+| params.description  | <code>String</code>  | description for your new workspace | false    |
+| params.accessToken  | <code>String</code>  | Zoho WorkDrive access token        | false    |
+| params.domain       | <code>String</code>  | Zoho api domain                    | false    |
+
+<br>
 
 ```javascript
 zWDApi.ws
@@ -266,19 +278,21 @@ zWDApi.ws
     });
 ```
 
-#### ws.rename
+### ws.rename
 
-rename current workspace
+_Rename current workspace_
 
 **Returns**: <code>Object</code> - object with workspase id and new name
 
-| Param              | Type                | Default          | Description                 | Required |
-| ------------------ | ------------------- | ---------------- | --------------------------- | -------- |
-| params             | <code>Object</code> |                  |                             |          |
-| params.wsId        | <code>String</code> |                  | Id of the desired ws        | true     |
-| params.name        | <code>String</code> |                  | New name your workspace     | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain             | false    |
+| Param              | Type                | Description                 | Required |
+| ------------------ | ------------------- | --------------------------- | -------- |
+| params             | <code>Object</code> |                             |          |
+| params.wsId        | <code>String</code> | Id of the desired ws        | true     |
+| params.name        | <code>String</code> | New name your workspace     | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token | false    |
+| params.domain      | <code>String</code> | Zoho api domain             | false    |
+
+<br>
 
 ```javascript
 zWDApi.ws
@@ -294,18 +308,20 @@ zWDApi.ws
     });
 ```
 
-#### ws.delete
+### ws.delete
 
-delete current workspace
+_Delete current workspace_
 
 **Returns**: <code>Object</code> - object with message about delete workspace
 
-| Param              | Type                | Default          | Description                 | Required |
-| ------------------ | ------------------- | ---------------- | --------------------------- | -------- |
-| params             | <code>Object</code> |                  |                             |          |
-| params.wsId        | <code>String</code> |                  | Id of the desired ws        | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain             | false    |
+| Param              | Type                | Description                 | Required |
+| ------------------ | ------------------- | --------------------------- | -------- |
+| params             | <code>Object</code> |                             |          |
+| params.wsId        | <code>String</code> | Id of the desired ws        | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token | false    |
+| params.domain      | <code>String</code> | Zoho api domain             | false    |
+
+<br>
 
 ```javascript
 zWDApi.ws
@@ -320,20 +336,22 @@ zWDApi.ws
     });
 ```
 
-#### ws.users
+## ws.users
 
-#### ws.users.all
+### ws.users.all
 
-Return current workspase`s users
+_Return current workspase`s users_
 
 **Returns**: <code>Object[]</code> - current workspase`s users array of objects
 
-| Param              | Type                | Default          | Description                 | Required |
-| ------------------ | ------------------- | ---------------- | --------------------------- | -------- |
-| params             | <code>Object</code> |                  |                             |          |
-| params.wsId        | <code>String</code> |                  | Id of the desired ws        | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain             | false    |
+| Param              | Type                | Description                 | Required |
+| ------------------ | ------------------- | --------------------------- | -------- |
+| params             | <code>Object</code> |                             |          |
+| params.wsId        | <code>String</code> | Id of the desired ws        | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token | false    |
+| params.domain      | <code>String</code> | Zoho api domain             | false    |
+
+<br>
 
 ```javascript
 zWDApi.ws.users
@@ -348,20 +366,22 @@ zWDApi.ws.users
     });
 ```
 
-#### ws.users.add
+### ws.users.add
 
-Add new user for current workspase
+_Add new user for current workspase_
 
 **Returns**: <code>Object</code> - new workspase`s user object
 
-| Param              | Type                | Default          | Description                                      | Required |
-| ------------------ | ------------------- | ---------------- | ------------------------------------------------ | -------- |
-| params             | <code>Object</code> |                  |                                                  |          |
-| params.wsId        | <code>String</code> |                  | Id of the desired ws                             | true     |
-| params.email       | <code>String</code> |                  | New user email                                   | true     |
-| params.role        | <code>String</code> |                  | New user role (Admin, Organizer, Editor, Viewer) | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token                      | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain                                  | false    |
+| Param              | Type                | Description                                      | Required |
+| ------------------ | ------------------- | ------------------------------------------------ | -------- |
+| params             | <code>Object</code> |                                                  |          |
+| params.wsId        | <code>String</code> | Id of the desired ws                             | true     |
+| params.email       | <code>String</code> | New user email                                   | true     |
+| params.role        | <code>String</code> | New user role (Admin, Organizer, Editor, Viewer) | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token                      | false    |
+| params.domain      | <code>String</code> | Zoho api domain                                  | false    |
+
+<br>
 
 ```javascript
 zWDApi.ws.users
@@ -378,19 +398,21 @@ zWDApi.ws.users
     });
 ```
 
-#### ws.users.newRole
+### ws.users.newRole
 
-Change user`s role
+_Change user`s role_
 
 **Returns**: <code>Object</code> - object with user`s id and new role
 
-| Param              | Type                | Default          | Description                                         | Required |
-| ------------------ | ------------------- | ---------------- | --------------------------------------------------- | -------- |
-| params             | <code>Object</code> |                  |                                                     |          |
-| params.userId      | <code>String</code> |                  | Id of the desired user                              | true     |
-| params.role        | <code>String</code> |                  | New role of user (Admin, Organizer, Editor, Viewer) | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token                         | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain                                     | false    |
+| Param              | Type                | Description                                         | Required |
+| ------------------ | ------------------- | --------------------------------------------------- | -------- |
+| params             | <code>Object</code> |                                                     |          |
+| params.userId      | <code>String</code> | Id of the desired user                              | true     |
+| params.role        | <code>String</code> | New role of user (Admin, Organizer, Editor, Viewer) | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token                         | false    |
+| params.domain      | <code>String</code> | Zoho api domain                                     | false    |
+
+<br>
 
 ```javascript
 zWDApi.ws.users
@@ -406,18 +428,20 @@ zWDApi.ws.users
     });
 ```
 
-#### ws.users.delete
+### ws.users.delete
 
-Delete user
+_Delete user_
 
 **Returns**: <code>Object</code> - object with message about delete user
 
-| Param              | Type                | Default          | Description                 | Required |
-| ------------------ | ------------------- | ---------------- | --------------------------- | -------- |
-| params             | <code>Object</code> |                  |                             |          |
-| params.userId      | <code>String</code> |                  | Id of the desired user      | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain             | false    |
+| Param              | Type                | Description                 | Required |
+| ------------------ | ------------------- | --------------------------- | -------- |
+| params             | <code>Object</code> |                             |          |
+| params.userId      | <code>String</code> | Id of the desired user      | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token | false    |
+| params.domain      | <code>String</code> | Zoho api domain             | false    |
+
+<br>
 
 ```javascript
 zWDApi.ws.users
@@ -432,20 +456,22 @@ zWDApi.ws.users
     });
 ```
 
-### privatespace
+## privatespace
 
-#### ps.info
+### ps.info
 
-Return user`s privatespaces
+_Return user`s privatespaces_
 
 **Returns**: <code>Object[]</code> - current user`s privatespaces array of objects
 
-| Param              | Type                | Default          | Description                       | Required |
-| ------------------ | ------------------- | ---------------- | --------------------------------- | -------- |
-| params             | <code>Object</code> |                  |                                   |          |
-| params.userId      | <code>String</code> |                  | Id user that desired privatespace | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token       | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain                   | false    |
+| Param              | Type                | Description                       | Required |
+| ------------------ | ------------------- | --------------------------------- | -------- |
+| params             | <code>Object</code> |                                   |          |
+| params.userId      | <code>String</code> | Id user that desired privatespace | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token       | false    |
+| params.domain      | <code>String</code> | Zoho api domain                   | false    |
+
+<br>
 
 ```javascript
 zWDApi.ps
@@ -460,18 +486,20 @@ zWDApi.ps
     });
 ```
 
-#### ps.files
+### ps.files
 
-Return current privatespace`s files by id
+_Return current privatespace`s files by id_
 
 **Returns**: <code>Object[]</code> - current privatespace`s files array of objects
 
-| Param              | Type                | Default          | Description                    | Required |
-| ------------------ | ------------------- | ---------------- | ------------------------------ | -------- |
-| params             | <code>Object</code> |                  |                                |          |
-| params.psId        | <code>String</code> |                  | Id of the desired privatespace | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token    | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain                | false    |
+| Param              | Type                | Description                    | Required |
+| ------------------ | ------------------- | ------------------------------ | -------- |
+| params             | <code>Object</code> |                                |          |
+| params.psId        | <code>String</code> | Id of the desired privatespace | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token    | false    |
+| params.domain      | <code>String</code> | Zoho api domain                | false    |
+
+<br>
 
 ```javascript
 zWDApi.ps
@@ -486,20 +514,22 @@ zWDApi.ps
     });
 ```
 
-### folder
+## folder
 
-#### folder.info
+### folder.info
 
-Return info about any folder by id
+_Return info about any folder by id_
 
 **Returns**: <code>Object</code> - current folder object
 
-| Param              | Type                | Default          | Description                 | Required |
-| ------------------ | ------------------- | ---------------- | --------------------------- | -------- |
-| params             | <code>Object</code> |                  |                             |          |
-| params.folderId    | <code>String</code> |                  | Id of the desired folder    | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain             | false    |
+| Param              | Type                | Description                 | Required |
+| ------------------ | ------------------- | --------------------------- | -------- |
+| params             | <code>Object</code> |                             |          |
+| params.folderId    | <code>String</code> | Id of the desired folder    | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token | false    |
+| params.domain      | <code>String</code> | Zoho api domain             | false    |
+
+<br>
 
 ```javascript
 zWDApi.folder
@@ -514,19 +544,21 @@ zWDApi.folder
     });
 ```
 
-#### folder.create
+### folder.create
 
-Return info about new folder
+_Return info about new folder_
 
 **Returns**: <code>Object</code> - new folder object
 
-| Param              | Type                | Default          | Description                 | Required |
-| ------------------ | ------------------- | ---------------- | --------------------------- | -------- |
-| params             | <code>Object</code> |                  |                             |          |
-| params.parentId    | <code>String</code> |                  | Id of parent folder for new | true     |
-| params.name        | <code>String</code> |                  | Name of new folder          | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain             | false    |
+| Param              | Type                | Description                 | Required |
+| ------------------ | ------------------- | --------------------------- | -------- |
+| params             | <code>Object</code> |                             |          |
+| params.parentId    | <code>String</code> | Id of parent folder for new | true     |
+| params.name        | <code>String</code> | Name of new folder          | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token | false    |
+| params.domain      | <code>String</code> | Zoho api domain             | false    |
+
+<br>
 
 ```javascript
 zWDApi.folder
@@ -542,19 +574,21 @@ zWDApi.folder
     });
 ```
 
-#### folder.rename
+### folder.rename
 
-Rename current folder by id
+_Rename current folder by id_
 
 **Returns**: <code>Object</code> - object with folder`s id and new name
 
-| Param              | Type                | Default          | Description                 | Required |
-| ------------------ | ------------------- | ---------------- | --------------------------- | -------- |
-| params             | <code>Object</code> |                  |                             |          |
-| params.folderId    | <code>String</code> |                  | Id of the desired folder    | true     |
-| params.name        | <code>String</code> |                  | New name your folder        | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain             | false    |
+| Param              | Type                | Description                 | Required |
+| ------------------ | ------------------- | --------------------------- | -------- |
+| params             | <code>Object</code> |                             |          |
+| params.folderId    | <code>String</code> | Id of the desired folder    | true     |
+| params.name        | <code>String</code> | New name your folder        | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token | false    |
+| params.domain      | <code>String</code> | Zoho api domain             | false    |
+
+<br>
 
 ```javascript
 zWDApi.folder
@@ -570,19 +604,21 @@ zWDApi.folder
     });
 ```
 
-#### folder.copy
+### folder.copy
 
-Copy current folder by id to folder with current id
+_Copy current folder by id to folder with current id_
 
 **Returns**: <code>Object</code> - сopied folder object
 
-| Param              | Type                | Default          | Description                                        | Required |
-| ------------------ | ------------------- | ---------------- | -------------------------------------------------- | -------- |
-| params             | <code>Object</code> |                  |                                                    |          |
-| params.folderId    | <code>String</code> |                  | Id of the desired folder                           | true     |
-| params.parentId    | <code>String</code> |                  | Id of the folder where will be copy current folder | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token                        | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain                                    | false    |
+| Param              | Type                | Description                                        | Required |
+| ------------------ | ------------------- | -------------------------------------------------- | -------- |
+| params             | <code>Object</code> |                                                    |          |
+| params.folderId    | <code>String</code> | Id of the desired folder                           | true     |
+| params.parentId    | <code>String</code> | Id of the folder where will be copy current folder | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token                        | false    |
+| params.domain      | <code>String</code> | Zoho api domain                                    | false    |
+
+<br>
 
 ```javascript
 zWDApi.folder
@@ -598,18 +634,20 @@ zWDApi.folder
     });
 ```
 
-#### folder.delete
+### folder.delete
 
-Delete folder
+_Delete folder_
 
 **Returns**: <code>Object</code> - object with message about delete folder
 
-| Param              | Type                | Default          | Description                 | Required |
-| ------------------ | ------------------- | ---------------- | --------------------------- | -------- |
-| params             | <code>Object</code> |                  |                             |          |
-| params.folderId    | <code>String</code> |                  | Id of the desired folder    | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain             | false    |
+| Param              | Type                | Description                 | Required |
+| ------------------ | ------------------- | --------------------------- | -------- |
+| params             | <code>Object</code> |                             |          |
+| params.folderId    | <code>String</code> | Id of the desired folder    | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token | false    |
+| params.domain      | <code>String</code> | Zoho api domain             | false    |
+
+<br>
 
 ```javascript
 zWDApi.folder
@@ -624,20 +662,22 @@ zWDApi.folder
     });
 ```
 
-### files
+## files
 
-#### files.info
+### files.info
 
-Return info about any file by id
+_Return info about any file by id_
 
 **Returns**: <code>Object</code> - current file object
 
-| Param              | Type                | Default          | Description                 | Required |
-| ------------------ | ------------------- | ---------------- | --------------------------- | -------- |
-| params             | <code>Object</code> |                  |                             |          |
-| params.fileId      | <code>String</code> |                  | Id of the desired file      | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain             | false    |
+| Param              | Type                | Description                 | Required |
+| ------------------ | ------------------- | --------------------------- | -------- |
+| params             | <code>Object</code> |                             |          |
+| params.fileId      | <code>String</code> | Id of the desired file      | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token | false    |
+| params.domain      | <code>String</code> | Zoho api domain             | false    |
+
+<br>
 
 ```javascript
 zWDApi.files
@@ -652,20 +692,22 @@ zWDApi.files
     });
 ```
 
-#### files.create
+### files.create
 
-Create file
+_Create file_
 
 **Returns**: <code>Object</code> - new file object
 
-| Param              | Type                | Default          | Description                                                                                   | Required |
-| ------------------ | ------------------- | ---------------- | --------------------------------------------------------------------------------------------- | -------- |
-| params             | <code>Object</code> |                  |                                                                                               |          |
-| params.parentId    | <code>String</code> |                  | Id of the folder where will be file                                                           | true     |
-| params.name        | <code>String</code> |                  | Name of your new file                                                                         | true     |
-| params.zFileType   | <code>String</code> |                  | Type of your new file (zw - writer native, zohosheet - sheet native, zohoshow - show native ) | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token                                                                   | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain                                                                               | false    |
+| Param              | Type                | Description                                                                                   | Required |
+| ------------------ | ------------------- | --------------------------------------------------------------------------------------------- | -------- |
+| params             | <code>Object</code> |                                                                                               |          |
+| params.parentId    | <code>String</code> | Id of the folder where will be file                                                           | true     |
+| params.name        | <code>String</code> | Name of your new file                                                                         | true     |
+| params.zFileType   | <code>String</code> | Type of your new file (zw - writer native, zohosheet - sheet native, zohoshow - show native ) | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token                                                                   | false    |
+| params.domain      | <code>String</code> | Zoho api domain                                                                               | false    |
+
+<br>
 
 ```javascript
 zWDApi.files
@@ -682,21 +724,23 @@ zWDApi.files
     });
 ```
 
-#### files.upload
+### files.upload
 
-upload file
+_Upload file_
 
 **Returns**: <code>Object</code> - current file object
 
-| Param                    | Type                 | Default          | Description                             | Required |
-| ------------------------ | -------------------- | ---------------- | --------------------------------------- | -------- |
-| params                   | <code>Object</code>  |                  |                                         |          |
-| params.parentId          | <code>String</code>  |                  | Id of the folder where will be file     | true     |
-| params.name              | <code>String</code>  |                  | Name of your new file                   | true     |
-| params.overrideNameExist | <code>Boolean</code> |                  | Override if same file exist in a folder | true     |
-| params.readableStream    | <code>file</code>    |                  | Readable Stream with file's content     | true     |
-| params.accessToken       | <code>String</code>  |                  | Zoho WorkDrive access token             | false    |
-| params.domain            | <code>String</code>  | <code>com</code> | Zoho api domain                         | false    |
+| Param                    | Type                 | Description                             | Required |
+| ------------------------ | -------------------- | --------------------------------------- | -------- |
+| params                   | <code>Object</code>  |                                         |          |
+| params.parentId          | <code>String</code>  | Id of the folder where will be file     | true     |
+| params.name              | <code>String</code>  | Name of your new file                   | true     |
+| params.overrideNameExist | <code>Boolean</code> | Override if same file exist in a folder | true     |
+| params.readableStream    | <code>file</code>    | Readable Stream with file's content     | true     |
+| params.accessToken       | <code>String</code>  | Zoho WorkDrive access token             | false    |
+| params.domain            | <code>String</code>  | Zoho api domain                         | false    |
+
+<br>
 
 ```javascript
 zWDApi.files
@@ -714,18 +758,20 @@ zWDApi.files
     });
 ```
 
-#### files.download
+### files.download
 
-Download file by id
+_Download file by id_
 
 **Returns**: <code>String</code> - String, that simple transform to buffer
 
-| Param              | Type                | Default          | Description                 | Required |
-| ------------------ | ------------------- | ---------------- | --------------------------- | -------- |
-| params             | <code>Object</code> |                  |                             |          |
-| params.fileId      | <code>String</code> |                  | Id of the desired file      | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain             | false    |
+| Param              | Type                | Description                 | Required |
+| ------------------ | ------------------- | --------------------------- | -------- |
+| params             | <code>Object</code> |                             |          |
+| params.fileId      | <code>String</code> | Id of the desired file      | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token | false    |
+| params.domain      | <code>String</code> | Zoho api domain             | false    |
+
+<br>
 
 ```javascript
 zWDApi.files
@@ -740,19 +786,21 @@ zWDApi.files
     });
 ```
 
-#### files.rename
+### files.rename
 
-Rename current file by id
+_Rename current file by id_
 
 **Returns**: <code>Object</code> - object with file`s id and new name
 
-| Param              | Type                | Default          | Description                 | Required |
-| ------------------ | ------------------- | ---------------- | --------------------------- | -------- |
-| params             | <code>Object</code> |                  |                             |          |
-| params.fileId      | <code>String</code> |                  | Id of the desired file      | true     |
-| params.name        | <code>String</code> |                  | New name your file          | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain             | false    |
+| Param              | Type                | Description                 | Required |
+| ------------------ | ------------------- | --------------------------- | -------- |
+| params             | <code>Object</code> |                             |          |
+| params.fileId      | <code>String</code> | Id of the desired file      | true     |
+| params.name        | <code>String</code> | New name your file          | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token | false    |
+| params.domain      | <code>String</code> | Zoho api domain             | false    |
+
+<br>
 
 ```javascript
 zWDApi.files
@@ -768,19 +816,21 @@ zWDApi.files
     });
 ```
 
-#### files.copy
+### files.copy
 
-Copy current files by id (more files) to folder with current id
+_Copy current files by id (more files) to folder with current id_
 
 **Returns**: <code>Object[]</code> - сopied files array of object
 
-| Param              | Type                  | Default          | Description                                       | Required |
-| ------------------ | --------------------- | ---------------- | ------------------------------------------------- | -------- |
-| params             | <code>Object</code>   |                  |                                                   |          |
-| params.idArr       | <code>String[]</code> |                  | Array with file`s id |true                        |
-| params.parentId    | <code>String</code>   |                  | Id of the folder where will be copy current files | true     |
-| params.accessToken | <code>String</code>   |                  | Zoho WorkDrive access token                       | false    |
-| params.domain      | <code>String</code>   | <code>com</code> | Zoho api domain                                   | false    |
+| Param              | Type                  | Description                                       | Required |
+| ------------------ | --------------------- | ------------------------------------------------- | -------- |
+| params             | <code>Object</code>   |                                                   |          |
+| params.idArr       | <code>String[]</code> | Array with file`s id |true                        |
+| params.parentId    | <code>String</code>   | Id of the folder where will be copy current files | true     |
+| params.accessToken | <code>String</code>   | Zoho WorkDrive access token                       | false    |
+| params.domain      | <code>String</code>   | Zoho api domain                                   | false    |
+
+<br>
 
 ```javascript
 zWDApi.files
@@ -796,18 +846,20 @@ zWDApi.files
     });
 ```
 
-#### files.delete
+### files.delete
 
-Delete current files by id (more files)
+_Delete current files by id (more files)_
 
 **Returns**: <code>Object</code> - object with message about delete files
 
-| Param              | Type                  | Default          | Description                 | Required |
-| ------------------ | --------------------- | ---------------- | --------------------------- | -------- |
-| params             | <code>Object</code>   |                  |                             |          |
-| params.idArr       | <code>String[]</code> |                  | Array with file`s id |true  |
-| params.accessToken | <code>String</code>   |                  | Zoho WorkDrive access token | false    |
-| params.domain      | <code>String</code>   | <code>com</code> | Zoho api domain             | false    |
+| Param              | Type                  | Description                 | Required |
+| ------------------ | --------------------- | --------------------------- | -------- |
+| params             | <code>Object</code>   |                             |          |
+| params.idArr       | <code>String[]</code> | Array with file`s id |true  |
+| params.accessToken | <code>String</code>   | Zoho WorkDrive access token | false    |
+| params.domain      | <code>String</code>   | Zoho api domain             | false    |
+
+<br>
 
 ```javascript
 zWDApi.files
@@ -822,18 +874,20 @@ zWDApi.files
     });
 ```
 
-#### files.move
+### files.move
 
-Move current files by id (more files) to folder with current id
+_Move current files by id (more files) to folder with current id_
 
 **Returns**: <code>Object[]</code> - movied files array of object
 
-| Param              | Type                  | Default          | Description                                  | Required |
-| ------------------ | --------------------- | ---------------- | -------------------------------------------- | -------- |
-| params             | <code>Object</code>   |                  |                                              |          |
-| params.idArr       | <code>Object[]</code> |                  | Array with file`s id and new parentId | true |
-| params.accessToken | <code>String</code>   |                  | Zoho WorkDrive access token                  | false    |
-| params.domain      | <code>String</code>   | <code>com</code> | Zoho api domain                              | false    |
+| Param              | Type                  | Description                                  | Required |
+| ------------------ | --------------------- | -------------------------------------------- | -------- |
+| params             | <code>Object</code>   |                                              |          |
+| params.idArr       | <code>Object[]</code> | Array with file`s id and new parentId | true |
+| params.accessToken | <code>String</code>   | Zoho WorkDrive access token                  | false    |
+| params.domain      | <code>String</code>   | Zoho api domain                              | false    |
+
+<br>
 
 ```javascript
 zWDApi.files
@@ -852,18 +906,20 @@ zWDApi.files
     });
 ```
 
-#### files.list
+### files.list
 
-Return info about all files by parent folder id
+_Return info about all files by parent folder id_
 
 **Returns**: <code>Object[]</code> - folder`s files array of object
 
-| Param              | Type                | Default          | Description                 | Required |
-| ------------------ | ------------------- | ---------------- | --------------------------- | -------- |
-| params             | <code>Object</code> |                  |                             |          |
-| params.folderId    | <code>String</code> |                  | Id of the parent folder     | true     |
-| params.accessToken | <code>String</code> |                  | Zoho WorkDrive access token | false    |
-| params.domain      | <code>String</code> | <code>com</code> | Zoho api domain             | false    |
+| Param              | Type                | Description                 | Required |
+| ------------------ | ------------------- | --------------------------- | -------- |
+| params             | <code>Object</code> |                             |          |
+| params.folderId    | <code>String</code> | Id of the parent folder     | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token | false    |
+| params.domain      | <code>String</code> | Zoho api domain             | false    |
+
+<br>
 
 ```javascript
 zWDApi.files
@@ -878,17 +934,19 @@ zWDApi.files
     });
 ```
 
-### url
+## url
 
-Return result get operation for current link (Only GET operation)
+_Return result get operation for current link (Only GET operation)_
 
 **Returns**: <code>Object</code> - result object
 
-| Param              | Type                | Default | Description                 | Required |
-| ------------------ | ------------------- | ------- | --------------------------- | -------- |
-| params             | <code>Object</code> |         |                             |          |
-| params.link        | <code>String</code> |         | link for request            | true     |
-| params.accessToken | <code>String</code> |         | Zoho WorkDrive access token | false    |
+| Param              | Type                | Description                 | Required |
+| ------------------ | ------------------- | --------------------------- | -------- |
+| params             | <code>Object</code> |                             |          |
+| params.link        | <code>String</code> | link for request            | true     |
+| params.accessToken | <code>String</code> | Zoho WorkDrive access token | false    |
+
+<br>
 
 ```javascript
 zWDApi.files
