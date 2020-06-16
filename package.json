@@ -1,6 +1,6 @@
 {
     "name": "zoho-workdrive-api",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "ZohoWorkDrive module, which makes communication with ZohoWorkDrive API easier",
     "main": "./lib/index.js",
     "scripts": {
