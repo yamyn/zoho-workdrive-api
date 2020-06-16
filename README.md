@@ -14,55 +14,55 @@ npm i zoho-workdrive-api
 
 ## Methods
 
-1. [team](#team-1)
+-   [team](#team-1)
 
-    - [all](#teamall)
-    - [info](#teaminfo)
-    - [currentUser](#teamcurrentuser)
+    -   [all](#teamall)
+    -   [info](#teaminfo)
+    -   [currentUser](#teamcurrentuser)
 
-2. [ws](#workspase) (Workspace)
+-   [ws](#workspase) (Workspace)
 
-    - [all](#wsall)
-    - [info](#wsinfo)
-    - [create](#wscreate)
-    - [rename](#wsrename)
-    - [delete](#wsdelete)
+    -   [all](#wsall)
+    -   [info](#wsinfo)
+    -   [create](#wscreate)
+    -   [rename](#wsrename)
+    -   [delete](#wsdelete)
 
-3. [users](#wsusers) (Users of workspace)
+-   [users](#wsusers) (Users of workspace)
 
-    - [all](#wsusersall)
-    - [add](#wsusersadd)
-    - [newRole](#wsusersnewrole)
-    - [delete](#wsusersdelete)
+    -   [all](#wsusersall)
+    -   [add](#wsusersadd)
+    -   [newRole](#wsusersnewrole)
+    -   [delete](#wsusersdelete)
 
-4. [ps](#privatespace) (Privatespace)
+-   [ps](#privatespace) (Privatespace)
 
-    - [all](#psinfo)
-    - [files](#psfiles)
+    -   [all](#psinfo)
+    -   [files](#psfiles)
 
-5. [folder](#folder-1)
+-   [folder](#folder-1)
 
-    - [info](#folderinfo)
-    - [create](#foldercreate)
-    - [rename](#folderrename)
-    - [copy](#foldercopy)
-    - [delete](#folderdelete)
+    -   [info](#folderinfo)
+    -   [create](#foldercreate)
+    -   [rename](#folderrename)
+    -   [copy](#foldercopy)
+    -   [delete](#folderdelete)
 
-6. [files](#files-1)
+-   [files](#files-1)
 
-    - [info](#filesinfo)
-    - [create](#filescreate)
-    - [upload](#filesupload)
-    - [download](#filesdownload)
-    - [rename](#filesrename)
-    - [copy](#filescopy)
-    - [delete](#filesdelete)
-    - [move](#filesmove)
-    - [list](#fileslist)
+    -   [info](#filesinfo)
+    -   [create](#filescreate)
+    -   [upload](#filesupload)
+    -   [download](#filesdownload)
+    -   [rename](#filesrename)
+    -   [copy](#filescopy)
+    -   [delete](#filesdelete)
+    -   [move](#filesmove)
+    -   [list](#fileslist)
 
-7. [url](#url-1)
+-   [url](#url-1)
 
-8. share will be added soon
+-   share will be added soon
 
 # Examples
 
@@ -79,7 +79,6 @@ const zWDApi = new ZWorkDriveApi(token, domain);
 | params.accessToken | <code>String</code> | Zoho WorkDrive access token | false    |
 | params.domain      | <code>String</code> | Zoho api domain             | false    |
 
-<br>
 <br>
 The parameters when creating an instance of the ZWorkDriveApi class are optional and will be used by default when you do
 not transfer a token and domain when working with api.
