@@ -1,6 +1,6 @@
 {
     "name": "zoho-workdrive-api",
-    "version": "0.1.2",
+    "version": "0.1.4",
     "description": "ZohoWorkDrive module, which makes communication with ZohoWorkDrive API easier",
     "main": "./lib/index.js",
     "scripts": {
@@ -23,9 +23,7 @@
     },
     "homepage": "https://github.com/yamyn/zoho-workdrive-api#readme",
     "dependencies": {
-        "axios": "^0.19.2",
-        "dotenv": "^8.2.0",
-        "form-data": "^3.0.0",
-        "moment": "^2.26.0"
+        "axios": "0.19.2",
+        "form-data": "3.0.0"
     }
 }
