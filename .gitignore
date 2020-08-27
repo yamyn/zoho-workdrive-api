@@ -67,4 +67,4 @@ typings/
 .env.test.local
 .env.production.local
 
-example.js
+test.js
